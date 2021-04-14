@@ -1,0 +1,19 @@
+{% extends "base_template.html" %}
+
+{% block title %}
+    Pruebas
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for numero in numeros %}
+        <li>{{ numero }}</li>
+    {% endfor %}
+</ul>
+
+{{ user.id }}<br>
+{{ user.name }}<br>
+{{ user.lastname }}<br>
+{{ user.age }}
+
+{% endblock %}
