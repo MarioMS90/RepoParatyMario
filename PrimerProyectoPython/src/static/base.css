@@ -38,3 +38,15 @@ a img {
 sup, sub {
     line-height: 0
 }
+
+.b_red {
+    background-color: red;
+}
+
+.b_blue {
+    background-color: blue;
+}
+
+.b_green{
+    background-color: green;
+}

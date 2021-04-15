@@ -49,14 +49,14 @@ def show_signup_form():
     return render_template("signup_form.html", form=form)
 
 
-numeros = [1, 2, 3, 4, 5, 6]
+numbers = [4, 8, 2, 3, 0, 9]
 user = {'id': 1, 'name': 'Mario', 'lastname': 'Muñoz', 'age': 30}
 
 
 @app.route("/pruebas/")
 def pruebas():
     args = {
-        "numeros": numeros,
+        "numbers": numbers,
         "user": user
     }
     return render_template("pruebas.html", **args)

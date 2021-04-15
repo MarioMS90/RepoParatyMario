@@ -5,15 +5,22 @@
 {% endblock %}
 
 {% block content %}
-<ul>
-    {% for numero in numeros %}
-        <li>{{ numero }}</li>
+    <strong>Recorriendo diccionario:</strong><br>
+    {% for key in user %}
+        {{ key }} = {{ user[key] }}<br>
     {% endfor %}
-</ul>
 
-{{ user.id }}<br>
-{{ user.name }}<br>
-{{ user.lastname }}<br>
-{{ user.age }}
+    <br><br><strong>Recorriendo lista:</strong><br>
+    {% for number in numbers %}
+        {% if loop.index % 2 == 0 %}
+            <div style="background-color:blue;">{{ number }}</div>
+        {% else %}
+            <div style="background-color:green;">{{ number }}</div>
+        {% endif %}
+    {% endfor %}
 
+    <br><br><strong>Recorriendo lista:</strong><br>
+    {% for number in numbers %}
+        <div class="{{ loop.cycle('b_red', 'b_blue', 'b_green') }}">{{ number }}</div>
+    {% endfor %}
 {% endblock %}
