@@ -51,12 +51,23 @@ def show_signup_form():
 
 numbers = [4, 8, 2, 3, 0, 9]
 user = {'id': 1, 'name': 'Mario', 'lastname': 'Muñoz', 'age': 30}
+users = [
+            user,
+            {'id': 2, 'name': 'Pepe', 'lastname': 'Perez', 'age': 20},
+            {'id': 3, 'name': 'Fran', 'lastname': 'Serrano', 'age': 21},
+            {'id': 4, 'name': 'Juan', 'lastname': 'Romero', 'age': 24},
+            {'id': 5, 'name': 'Pedro', 'lastname': 'Sanchez', 'age': 23},
+            {'id': 6, 'name': 'Jorge', 'lastname': 'Madrigal', 'age': 50},
+        ]
 
 
 @app.route("/pruebas/")
 def pruebas():
     args = {
         "numbers": numbers,
-        "user": user
+        "user": user,
+        "users": users
     }
     return render_template("pruebas.html", **args)
+
+app.run(host="0.0.0.0", port=8080, debug=True)

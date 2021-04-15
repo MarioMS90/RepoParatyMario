@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <strong>Recorriendo diccionario:</strong><br>
+    <!--<strong>Recorriendo diccionario:</strong><br>
     {% for key in user %}
         {{ key }} = {{ user[key] }}<br>
     {% endfor %}
@@ -22,5 +22,20 @@
     <br><br><strong>Recorriendo lista:</strong><br>
     {% for number in numbers %}
         <div class="{{ loop.cycle('b_red', 'b_blue', 'b_green') }}">{{ number }}</div>
+    {% endfor %}-->
+
+    <strong>Recorriendo lista con doble bucle</strong>
+    {% for number in numbers %}
+        {% set firstLoop = loop %}
+        {% for number in numbers %}
+            <div class="clase_{{ firstLoop.index }}_{{ loop.index }}">{{ number }}</div>
+        {% endfor %}
+    {% endfor %}
+
+    <strong>Mostrando usuarios mayores de 23 años</strong>
+    {% for user in users %}
+        {% if user.age > 23 %}
+            <div>{{ user }}</div>
+        {% endif %}
     {% endfor %}
 {% endblock %}
