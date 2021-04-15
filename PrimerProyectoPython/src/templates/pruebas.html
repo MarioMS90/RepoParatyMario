@@ -25,10 +25,10 @@
     {% endfor %}-->
 
     <strong>Recorriendo lista con doble bucle</strong>
-    {% for number in numbers %}
+    {% for firstNumber in numbers %}
         {% set firstLoop = loop %}
         {% for number in numbers %}
-            <div class="clase_{{ firstLoop.index }}_{{ loop.index }}">{{ number }}</div>
+            <div class="clase_{{ firstLoop.index }}_{{ loop.index }}">{{ firstNumber }} - {{ number }}</div>
         {% endfor %}
     {% endfor %}
 
